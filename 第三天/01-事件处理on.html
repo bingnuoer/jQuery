@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: purple;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        $(function () {
+            // 1.单个事件注册
+            // $("div").click(function () {
+            //     $(this).css("background", "red")
+            // })
+            // $("div").mouseenter(function () {
+            //     $(this).css("background", "skyblue")
+            // })
+            // $("div").mouseleave(function () {
+            //     $(this).css("background", "blue")
+            // })
+
+            // 2.事件处理
+            // $("div").on({
+            //     mouseenter: function () {
+            //         $(this).css("background", "skyblue")
+            //     },
+            //     click: function () {
+            //         $(this).css("background", "red")
+            //     },
+            //     mouseleave() {
+            //         $(this).css("background", "blue")
+            //     }
+            // })
+
+            // 一个DOM元素对象有多个事件，且使用同一个类
+            $("div").on("mouseenter mouseleave",function(){
+                $(this).toggleClass("current")
+            })
+
+            // 3.事件委托
+            $("ul").on("click","li",function(){
+                alert(11)
+            })
+
+            // 4.给动态创建的元素添加绑定事件
+            // 以前写法 ：动态创建的元素后不能添加绑定事件
+            // $("ol li").click(function(){
+            //     alert(11)
+            // })
+            // var li = $("<li>我是后来创建的li</li>")
+            // $("ol").append(li)
+
+            // 现在的写法：动态创建的元素后可以添加绑定事件
+            $("ol").on("click","li",function(){
+                alert(11)
+            })
+            var li = $("<li>我是后来创建的li</li>")
+            $("ol").append(li)
+        })
+
+    </script>
+</body>
+
+</html>

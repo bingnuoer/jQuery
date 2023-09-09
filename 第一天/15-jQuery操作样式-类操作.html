@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            margin: 100px auto;
+            /* 过渡 */
+            transition: all .2s;
+            
+        }
+
+        .current {
+            background-color: red;
+            /* 旋转 */
+            transform: rotate(360deg);
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="current"></div>
+    <script>
+        $(function(){
+            // 1.添加类
+            $('div').click(function(){
+                // $(this).addClass('current')
+            })
+         
+    
+            // 2.移除类
+            // $('div').click(function(){
+            //     $(this).removeClass('current')
+            // })
+    
+            // 3.切换类 有就移除，没有就添加
+            $('div').click(function(){
+                $(this).toggleClass('current')
+            })
+
+        })
+       
+    </script>
+</body>
+
+</html>

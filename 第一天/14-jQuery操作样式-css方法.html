@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 操作样式之css方法
+        $(function () {
+            // $('div').css('width', '400px')
+            // $('div').css('height',400)
+
+            // 批量修改样式——对象
+            $('div').css({
+                width: 400,
+                height: 400,
+                backgroundColor: 'red'
+            })
+        })
+    </script>
+</body>
+
+</html>

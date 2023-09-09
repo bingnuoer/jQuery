@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function () {
+            // 一、each遍历DOM元素 用这种写法
+            var arr = ["red", "green", "blue"]
+            var sum = 0
+            $("div").each(function (i, domEle) {
+                console.log(i)
+                console.log(domEle)
+                $(domEle).css("color", "pink")
+
+                $(domEle).css("color", arr[i])
+
+                sum += parseInt($(domEle).text())
+            })
+            console.log(sum)
+            console.log("----------------------")
+
+            // 二、each遍历数组、对象，处理数据 用这种写法
+            // each遍历DOM元素
+            $.each($("div"), function (i, ele) {
+                console.log(i)
+                console.log(ele)
+            });
+            console.log("----------------------")
+
+
+            // each遍历数组
+            $.each(arr, function (i, ele) {
+                console.log(i) // 数组元素索引号
+                console.log(ele) //数组值
+            });
+            console.log("----------------------")
+
+            // each遍历对象
+            $.each({
+                uname: "pink",
+                age: 18
+            }, function (i, ele) {
+                console.log(i)
+                console.log(ele)
+            })
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

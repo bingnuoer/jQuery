@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all .3s;
+        }
+        
+        .two {
+            transform: rotate(720deg);
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="one"></div>
+    <script>
+    //   1.原生js添加类 影响原先类名（会覆盖）
+    // var one = document.querySelector('.one')
+    // one.className = 'two'
+
+    // 2.jQuery添加类名 不影响原有类名
+    $('.one').addClass('two')
+    $('.one').removeClass('two')
+
+    </script>
+</body>
+
+</html>

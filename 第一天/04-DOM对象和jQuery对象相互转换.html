@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <video src="./IMG_5627.mp4"></video>
+    <script>
+        // 1.DOM对象转换成jQery对象
+        // (1) 直接获取
+        $('video')
+        // (2)原生的js获取过来的DOM对象 转换
+        const myVideo = document.querySelector('video')
+        $('myVideo')
+        $(myVideo).play() // jQuery对象不能使用play()方法
+
+        // 2.jQuery对象转换成DOM对象 才可以操作播放视频play()方法
+        myVideo.play()
+        $('myVideo')[0].play()
+        $('myVideo').get(0).play()
+
+
+
+
+    </script>
+</body>
+
+</html>

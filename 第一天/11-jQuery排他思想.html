@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <script>
+        // 隐式迭代 排他思想
+        $(function(){
+            // 1.绑定点击事件
+            $('button').click(function(){
+                // 2.当前元素添加样式
+                $(this).css('background','pink')
+                // 3.其他元素去掉样式
+                $(this).siblings('button').css('background','')
+            })
+        })
+    </script>
+</body>
+
+</html>

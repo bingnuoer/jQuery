@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        // 1.DOM对象
+        const myDiv = document.querySelector('div')
+        console.dir(myDiv) // 获取元素 及其属性方法
+        // console.log(myDiv) // 获取标签
+
+        // 2.jQuery对象 伪数组
+        $('div')
+        console.dir($('div'))
+        // console.log($('div'))
+
+        // 3.DOM对象和jQuery对象实现相同的功能有各自的属性，不能混用
+        // 隐藏
+        // 3.1
+        // myDiv.style.display = 'none'
+
+        // 3.2
+        $('div').hide()
+
+    </script>
+</body>
+</html>
